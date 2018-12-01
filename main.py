@@ -18,7 +18,11 @@ def draw(x, y):
     print(output)
 
 def decideTile():
-    return random.randint(0,1)
+    tile = random.randint(0,1)
+    if tile == 0:
+        return " "
+    elif tile == 1:
+        return "X"
 
 if __name__ == '__main__':
     dimensions = getinput()
