@@ -6,6 +6,8 @@ def getinput():
     dimensions = dimensions.split(',')
     return dimensions;
 
+def makemaze(width, height):
+
 def draw(x, y):
     print(str(x) + " " + str(y))
 
@@ -25,7 +27,7 @@ def decideTile():
         return "X"
 
 if __name__ == '__main__':
-    dimensions = getinput()
-    x = dimensions[0]
-    y = dimensions[1]
-    draw(x,y)
+    #dimensions = getinput()
+    width,height = 10,10# dimensions[0],dimensions[1]
+
+    makemaze(width,height)
