@@ -1,5 +1,5 @@
 from PIL import Image, ImageDraw
-import random
+from random import choice
 
 def getinput():
     dimensions = input("Please enter your dimensions - separate by comma\n")
@@ -7,6 +7,26 @@ def getinput():
     return dimensions;
 
 def makemaze(width, height):
+
+    visited = []
+
+    def walk(x,y):
+
+        visited.append([x,y])
+
+        north = [x-1, y]
+        east = [x, y+1]
+        south = [x-1, y]
+        west = [x, y-1]
+
+        directions = [north, east, south, west]
+        d = choice(directions)
+
+        print(d)
+        visited.append(d)
+        print(visited)
+
+    walk(0,0)
 
 def draw(x, y):
     print(str(x) + " " + str(y))
