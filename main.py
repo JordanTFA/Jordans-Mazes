@@ -17,29 +17,27 @@ def makemaze(width, height):
 
         directions = [north, east, south, west]
 
-        for xx,yy in directions:
-            if xx < 0 or xx > width - 1 or yy < 0 or yy > height - 1:
-                directions.remove([xx,yy])
-                print("Removing " + str([xx,yy]) + ", Directions left = " + str(directions))
-                if len(directions) == 0:
-                    print("Out of neightbours")
+        # for xx,yy in directions:
+        #     if xx < 0 or xx >= width or yy < 0 or yy >= height:
+        #         directions.remove([xx,yy])
+        #         print("Removing " + str([xx,yy]) + ", Directions left = " + str(directions))
 
         d = choice(directions)
-        # while not inBounds(d):
-        #     print("Initial Out of bounds: " + str(d) + ", Directions: " + str(directions))
-        #
-        #     if len(directions) > 1:
-        #         directions.remove(d)
-        #         print("Removed: " + str(d))
-        #         d = choice(directions)
-        #
-        #     else:
-        #         print("Out of neighbours - Now we backtrack...")
-        #         popped.append(visited[-1])
-        #         visited.pop()
-        #         visited.append(d)
-        #         print("New D: " + str(d))
-        #         walk(d[0], d[1])
+        while not inBounds(d):
+            print("Initial Out of bounds: " + str(d) + ", Directions: " + str(directions))
+
+            if len(directions) > 1:
+                directions.remove(d)
+                print("Removed: " + str(d))
+                d = choice(directions)
+
+            else:
+                print("Out of neighbours - Now we backtrack...")
+                popped.append(visited[-1])
+                visited.pop()
+                visited.append(d)
+                print("New D: " + str(d))
+                walk(d[0], d[1])
 
         while d in visited:
 
