@@ -5,10 +5,13 @@ def makemaze(width, height):
 
     visited = []
     popped = []
-    visited.append([0,0])
+    #visited.append([0,0])
     print("Visited: " + str(visited))
 
     def walk(x,y):
+
+        visited.append([x,y])
+        print(visited)
 
         north = [x - 1, y]
         east = [x, y + 1]
@@ -35,7 +38,7 @@ def makemaze(width, height):
                 print("Out of neighbours - Now we backtrack...")
                 popped.append(visited[-1])
                 visited.pop()
-                visited.append(d)
+                d = visited[-1]
                 print("New D: " + str(d))
                 walk(d[0], d[1])
 
@@ -52,7 +55,6 @@ def makemaze(width, height):
                 popped.append(visited[-1])
                 visited.pop()
                 d = visited[-1]
-                visited.append(d)
                 print("New D: " + str(d))
                 walk(d[0], d[1])
 
@@ -68,13 +70,10 @@ def makemaze(width, height):
                     popped.append(visited[-1])
                     visited.pop()
                     d = visited[-1]
-                    visited.append(d)
                     print("New D: " + str(d))
                     walk(d[0], d[1])
 
         print("D: " + str(d))
-        visited.append(d)
-
 
         if (len(visited) + len(popped)) < width * height:
             walk(d[0], d[1])
