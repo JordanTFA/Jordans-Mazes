@@ -44,7 +44,7 @@ def makemaze(width, height):
             print("Result: ", result[-1])
             print()
 
-            if (len(visited) + len(popped)) < 15:
+            if (len(visited) + len(popped)) < ((height * width) - 1):
                 walk(d[0], d[1])
 
         # No neighbours - time to backtrack...
@@ -67,5 +67,5 @@ def makemaze(width, height):
 
 if __name__ == '__main__':
 
-    width, height = 4, 4
+    width, height = 20, 20
     makemaze(width, height)
