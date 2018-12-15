@@ -65,7 +65,13 @@ def makemaze(width, height):
     for r in result:
         print(r)
 
+def drawmaze(width, height):
+    for i in range(0, width):
+        for j in range(0, height):
+            print("*")
+
 if __name__ == '__main__':
 
     width, height = 20, 20
-    makemaze(width, height)
+    #makemaze(width, height)
+    drawmaze(width, height)
