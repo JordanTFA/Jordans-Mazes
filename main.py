@@ -68,8 +68,11 @@ def makemaze(width, height):
 def drawmaze(width, height):
     p = ["+--" * width + "+" for _ in range(height)]
 
-    for i in p:
-        print(i)
+    for i in range(height):
+        print(("+--" * width) + "+")
+        print("|  " * (width + 1))
+
+    print(("+--" * width) + "+")
 
     print()
     print("+--+--+--+--+--+")
@@ -85,6 +88,6 @@ def drawmaze(width, height):
 
 if __name__ == '__main__':
 
-    width, height = 4, 4
+    width, height = 5, 4
     #makemaze(width, height)
     drawmaze(width, height)
