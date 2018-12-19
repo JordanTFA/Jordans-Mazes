@@ -1,4 +1,3 @@
-from PIL import Image, ImageDraw
 from random import choice ,randint, shuffle
 
 def makemaze(width, height):
@@ -64,30 +63,32 @@ def makemaze(width, height):
 
     for r in result:
         print(r)
-
+    
 def drawmaze(width, height):
-    p = ["+--" * width + "+" for _ in range(height)]
+
+    print()
+    #grid[width][height] 
 
     for i in range(height):
         print(("+--" * width) + "+")
         print("|  " * (width + 1))
 
+    #Print floor
     print(("+--" * width) + "+")
 
     print()
     print("+--+--+--+--+--+")
-    print("|  |        |  |")
+    print("|  |           |")
     print("+  +  +--+  +  +")
-    print("|     |        |")
-    print("+--+--+--+--+  |")
-    print("|              |")
+    print("|     |     |  |")
+    print("+--+  +--+--+  +")
+    print("|  |  |     |  |")
+    print("+  +  +  +  +  +")
+    print("|        |  |  |")
     print("+--+--+--+--+--+")
-    # for i in range(0, width):
-    #     for j in range(0, height):
-    #         print("*")
 
 if __name__ == '__main__':
 
     width, height = 5, 4
-    #makemaze(width, height)
+    makemaze(width, height)
     drawmaze(width, height)
