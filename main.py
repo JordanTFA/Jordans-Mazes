@@ -68,10 +68,16 @@ def drawmaze(width, height):
 
     print()
     #grid[width][height] 
+    horz[] = ["|  |           |", "  |           |  ", "  |           |  ", "  |           |  "]
+    vert[] = ["+  +  +--+  +  +", "+--+  +--+--+  +", "+  +  +  +  +  +"]
 
+    print(("+--" * width) + "+")
     for i in range(height):
-        print(("+--" * width) + "+")
-        print("|  " * (width + 1))
+        print (horz[i])
+        print(vert[i])
+    #for i in range(height):
+        #print(("+--" * width) + "+")
+        #print("|  " * (width + 1))
 
     #Print floor
     print(("+--" * width) + "+")
@@ -89,6 +95,6 @@ def drawmaze(width, height):
 
 if __name__ == '__main__':
 
-    width, height = 5, 4
+    width, height = 5,4
     makemaze(width, height)
     drawmaze(width, height)
