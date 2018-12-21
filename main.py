@@ -50,8 +50,8 @@ def makemaze(width, height):
         else:
             print("No Neighbours")
             print("Visited: ", visited)
-            print("Popped: ", popped)
             popped.append(visited[-1])
+            print("Popped: ", popped)
             visited.pop()
             d = visited[-1]
             visited.pop()
@@ -74,14 +74,23 @@ def drawmaze(width, height):
     
     row = ""
 
-    print()
+    #print()
+    #print(("+--" * width) + "+")
     #grid[width][height] 
-    #horz = ["|  |           |", "|     |     |  |", "|  |  |     |  |", "|        |  |  |", "|        |  |  |"]
-    #vert = ["+  +  +--+  +  +", "+--+  +--+--+  +", "+  +  +  +  +  +"]
-    row += hw + hw + hp + hp + hp + hw
-    row += vp + vp + vw + vp + vp + vw
-    print(row)
+    row += hw + hw + hp + hp + hp + hw + "\n"
+    row += vp + vp + vw + vp + vp + vp + "\n"
+    #print(row)
 
+    grid = []
+    for row in range(height): grid += [["t"]*width]
+    
+    msg = "\n"
+    for row in grid:
+        for t in row:
+            msg+=t
+        msg+="\n"
+    
+    print(msg)
     #print(("+--" * width) + "+")
     #for i in range(height):
         #print (horz[i])
@@ -92,7 +101,7 @@ def drawmaze(width, height):
         #print("|  " * (width + 1))
 
     #Print floor
-    print(("+--" * width) + "+")
+    #print(("+--" * width) + "+")
 
     print()
     print("+--+--+--+--+--+")
