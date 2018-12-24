@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-from random import choice, randint, shuffle
-=======
 from random import choice ,randint, shuffle
->>>>>>> origin/master
-
 
 def makemaze(width, height):
     visited = []
@@ -68,8 +63,6 @@ def makemaze(width, height):
 
     for r in result:
         print(r)
-<<<<<<< HEAD
-
 
 def drawmaze(width, height):
     hw = "|  "
@@ -110,47 +103,6 @@ def drawmaze(width, height):
 
     # Print floor
     # print(("+--" * width) + "+")
-=======
-    
-def drawmaze(width, height):
-    
-    hw = "|  "
-    hp = "   "
-    
-    vw = "+--"
-    vp = "+  "
-    
-    row = ""
-
-    #print()
-    #print(("+--" * width) + "+")
-    #grid[width][height] 
-    row += hw + hw + hp + hp + hp + hw + "\n"
-    row += vp + vp + vw + vp + vp + vp + "\n"
-    #print(row)
-
-    grid = []
-    for row in range(height): grid += [["t"]*width]
-    
-    msg = "\n"
-    for row in grid:
-        for t in row:
-            msg+=t
-        msg+="\n"
-    
-    print(msg)
-    #print(("+--" * width) + "+")
-    #for i in range(height):
-        #print (horz[i])
-        #if i < len(vert):
-            #print(vert[i])
-    #for i in range(height):
-        #print(("+--" * width) + "+")
-        #print("|  " * (width + 1))
-
-    #Print floor
-    #print(("+--" * width) + "+")
->>>>>>> origin/master
 
     print()
     print("+--+--+--+--+--+")
@@ -162,17 +114,8 @@ def drawmaze(width, height):
     print("+  +  +  +  +  +")
     print("|        |  |  |")
     print("+--+--+--+--+--+")
-<<<<<<< HEAD
-
 
 if __name__ == '__main__':
     width, height = 5, 4
     makemaze(width, height)
     drawmaze(width, height)
-=======
-if __name__ == '__main__':
-
-    width, height = 5,4
-    makemaze(width, height)
-    drawmaze(width, height)
->>>>>>> origin/master
