@@ -71,19 +71,12 @@ def drawmaze(width, height):
     vw = "+--"
     vp = "+  "
 
-    row = ""
-
-    # print()
-    # print(("+--" * width) + "+")
-    # grid[width][height]
-    row += hw + hw + hp + hp + hp + hw + "\n"
-    row += vp + vp + vw + vp + vp + vp + "\n"
-    # print(row)
-
     grid = []
-    for row in range(height): grid += [["t"] * width]
-
-    grid[2][2] = "E"
+    for row in range(height):
+        if row % 2 == 0:
+            grid += [["+--"] * width]
+        else:
+            grid += [["|  "] * width]
 
     msg = "\n"
     for row in grid:
@@ -92,6 +85,32 @@ def drawmaze(width, height):
         msg += "\n"
 
     print(msg)
+
+    row = ""
+
+    # grid = []
+    # for row in range(height):
+    #     grid += [["+"] * width]
+
+    # print()
+    # print(("+--" * width) + "+")
+    # grid[width][height]
+    # row += hw + hw + hp + hp + hp + hw + "\n"
+    # row += vp + vp + vw + vp + vp + vp + "\n"
+    # print(("+--" * width) + "+")
+    # row += hw + hw + hw + hw + hw + hw + "\n"
+    # row += vw + vw + vw + vw + vw + vp + "\n"
+    # row += hw + hw + hw + hw + hw + hw + "\n"
+    # row += vw + vw + vw + vw + vw + vp + "\n"
+    # row += hw + hw + hw + hw + hw + hw + "\n"
+    # row += vw + vw + vw + vw + vw + vp + "\n"
+    # row += hw + hw + hw + hw + hw + hw + "\n"
+    # row += vw + vw + vw + vw + vw + vp + "\n"
+    # print(row)
+
+    #grid[2][2] = "E"
+
+
     # print(("+--" * width) + "+")
     # for i in range(height):
     # print (horz[i])
@@ -102,7 +121,7 @@ def drawmaze(width, height):
     # print("|  " * (width + 1))
 
     # Print floor
-    # print(("+--" * width) + "+")
+    #     # print(("+--" * width) + "+")
 
     print()
     print("+--+--+--+--+--+")
@@ -116,6 +135,6 @@ def drawmaze(width, height):
     print("+--+--+--+--+--+")
 
 if __name__ == '__main__':
-    width, height = 5, 4
+    width, height = 10,8
     makemaze(width, height)
     drawmaze(width, height)
