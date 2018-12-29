@@ -72,18 +72,20 @@ def drawmaze(width, height):
     vp = "+  "
 
     grid = []
-    for row in range(height):
+    for row in range(height * 2):
         if row % 2 == 0:
-            grid += [["+--"] * width]
+            grid += [["+--"] * width + ["+"]]
         else:
-            grid += [["|  "] * width]
+            grid += [["|  "] * width + ["|"]]
 
     msg = "\n"
+
     for row in grid:
         for t in row:
             msg += t
         msg += "\n"
 
+    msg += ("+--" * width) + "+"
     print(msg)
 
     row = ""
