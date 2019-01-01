@@ -1,9 +1,12 @@
 from random import choice ,randint, shuffle
 
+pairs = [0,0]
+
 def makemaze(width, height):
     visited = []
     popped = []
     result = []
+
     print("D: [0,0]\n")
 
     def walk(x, y):
@@ -34,6 +37,7 @@ def makemaze(width, height):
         if directions:
             d = choice(directions)
             result.append(str(visited[-1]) + " <-> " + str(d))
+            pairs.append(visited[-1],d)
 
             print("Out of Bounds: ", outOfBounds)
             print("Visited tiles: ", v)
@@ -92,6 +96,9 @@ def drawmaze(width, height):
         msg += "\n"
 
     print(msg)
+
+    for a,b in pairs:
+        print(a,b)
 
     row = ""
 
