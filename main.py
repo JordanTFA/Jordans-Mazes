@@ -1,6 +1,6 @@
 from random import choice ,randint, shuffle
 
-pairs = [0,0]
+pairs = []
 
 def makemaze(width, height):
     visited = []
@@ -37,7 +37,7 @@ def makemaze(width, height):
         if directions:
             d = choice(directions)
             result.append(str(visited[-1]) + " <-> " + str(d))
-            pairs.append(visited[-1],d)
+            pairs.append((visited[-1],d))
 
             print("Out of Bounds: ", outOfBounds)
             print("Visited tiles: ", v)
@@ -82,9 +82,13 @@ def drawmaze(width, height):
         else:
             grid += [["|  "] * width + ["|"]]
 
-    grid[0][1] = "   "
-    grid[1][1] = "+  "
-    grid[0][2] = "   "
+    for a,b in pairs:
+        low = min(a,b)
+        high = max(a,b)
+        if a[0] == b[0]: # Vertical movement
+            grid[high[0]][high[1]] = vp
+        if a[1] == b[1]: # Horiztonal movement
+            grid[low[0]][low[1]] = hp
 
     msg = "\n"
 
@@ -97,45 +101,7 @@ def drawmaze(width, height):
 
     print(msg)
 
-    for a,b in pairs:
-        print(a,b)
-
     row = ""
-
-    # grid = []
-    # for row in range(height):
-    #     grid += [["+"] * width]
-
-    # print()
-    # print(("+--" * width) + "+")
-    # grid[width][height]
-    # row += hw + hw + hp + hp + hp + hw + "\n"
-    # row += vp + vp + vw + vp + vp + vp + "\n"
-    # print(("+--" * width) + "+")
-    # row += hw + hw + hw + hw + hw + hw + "\n"
-    # row += vw + vw + vw + vw + vw + vp + "\n"
-    # row += hw + hw + hw + hw + hw + hw + "\n"
-    # row += vw + vw + vw + vw + vw + vp + "\n"
-    # row += hw + hw + hw + hw + hw + hw + "\n"
-    # row += vw + vw + vw + vw + vw + vp + "\n"
-    # row += hw + hw + hw + hw + hw + hw + "\n"
-    # row += vw + vw + vw + vw + vw + vp + "\n"
-    # print(row)
-
-    #grid[2][2] = "E"
-
-
-    # print(("+--" * width) + "+")
-    # for i in range(height):
-    # print (horz[i])
-    # if i < len(vert):
-    # print(vert[i])
-    # for i in range(height):
-    # print(("+--" * width) + "+")
-    # print("|  " * (width + 1))
-
-    # Print floor
-    #     # print(("+--" * width) + "+")
 
     print()
     print("+--+--+--+--+--+")
