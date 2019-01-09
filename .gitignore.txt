@@ -1,5 +1,0 @@
-# PyCharm
-.idea
-
-#Binary Files
-.bin
