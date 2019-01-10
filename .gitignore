@@ -18,8 +18,8 @@ $RECYCLE.BIN/
 *.lnk
 
 # PyCharm
+.idea
 
-.idea/
 # Binary files
 bin/
 
