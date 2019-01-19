@@ -1,6 +1,6 @@
 # Jordan's Mazes
 
-Maze generation via recursive backt-tracker algorithm 
+Maze generation via recursive back-tracker algorithm 
 
 -Creates path
 
