@@ -75,20 +75,26 @@ def drawmaze(width, height):
     vw = "+--"
     vp = "+  "
 
+    print(("+--" * width) + "+\n")
+
     grid = []
-    for row in range(height * 2):
-        if row % 2 != 0:
-            grid += [[vw] * width + ["+"]]
-        else:
-            grid += [[hw] * width + ["|"]]
+    # for row in range(height * 2):
+    #     grid += []
+
+    for row in grid:
+        for t in row:
+            msg += t[0] + "," + t[1]
+        msg += "\n"
+
+    grid = []
 
     for a,b in pairs:
         low = min(a,b)
         high = max(a,b)
         if a[0] == b[0]: # Vertical movement
-            grid[high[0]][high[1]] = vp
+            grid[0][1] = vp
         if a[1] == b[1]: # Horizontal movement
-            grid[low[0]][low[1]] = hp
+            grid[0][1] = hp
 
     msg = "\n"
 
