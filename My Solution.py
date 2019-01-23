@@ -114,7 +114,6 @@ def drawmaze(width, height):
     print("|        |  |  |")
     print("+--+--+--+--+--+")
 
-# Random comment to try out command line git
 if __name__ == '__main__':
     width, height = 3,3
     makemaze(width, height)
