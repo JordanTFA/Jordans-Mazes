@@ -2,7 +2,7 @@ from random import choice
 
 pairs = []
 
-def makemaze(width, height):
+def makeMaze(width, height):
     visited = []
     popped = []
     result = []
@@ -68,7 +68,7 @@ def makemaze(width, height):
     for r in result:
         print(r)
 
-def drawmaze(width, height):
+def drawMaze(width, height):
     hw = "|  "
     hp = "   "
 
@@ -115,6 +115,6 @@ def drawmaze(width, height):
     print("+--+--+--+--+--+")
 
 if __name__ == '__main__':
-    width, height = 3,3
-    makemaze(width, height)
-    drawmaze(width, height)
+    width, height = 4,4
+    makeMaze(width, height)
+    drawMaze(width, height)
